@@ -9,18 +9,21 @@ app.get("/", (req, res) => {
 app.post('/', (req, res) => {
     if (typeof req.body.number !== 'number') {
         res.json({Error:'Invalid input for number'})
+    } else if (req.body.convertFrom !== 'lb' || req.body.convertFrom !== 'kg'){
+        res.json({Error: 'Conversion format not supported'})
     };
 
     let num = req.body.number;
 
-    if (req.body.convertFrom == "lbs") {
+
+    if (req.body.convertFrom == 'lbs') {
         num = (num * 0.45359237)
         num = num.toFixed(1)
-        res.json({convertedTo: "kg", number: num})};
+        res.json({converted: num})};
 
-    if (req.body.convertFrom == "kg") {
+    if (req.body.convertFrom == 'kg') {
         num = (num * 2.2)
-        res.json({convertedTo: "lbs", number: num})};
+        res.json({converted: num})};
 })
 
 
