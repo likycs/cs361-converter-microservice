@@ -16,14 +16,11 @@ app.post('/', (req, res) => {
     if (req.body.convertFrom == "lbs") {
         num = (num * 0.45359237)
         num = num.toFixed(1)
-        res.json({converted: num});
-    } else if (req.body.convertFrom == "kg") {
+        res.json({converted: num})};
+
+    if (req.body.convertFrom == "kg") {
         num = (num * 2.2)
-        num = num.toFxied(1)
-        res.json({converted: num});
-    } else {
-        res.json({Error: "convertFrom format not included"});
-    };
+        res.json({converted: num})};
 })
 
 
