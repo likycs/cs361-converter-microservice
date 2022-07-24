@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
     res.send('testing 123')
 })
 
@@ -15,13 +15,11 @@ app.post('/', (req, res) => {
 
     if (req.body.convertFrom == "lbs") {
         num = (num * 0.45359237)
-        console.log(num)
-        res.send(num)
+        res.json({converted: num })
     } else {
         num = (num * 2.2)
-        console.log(num)
-        res.send(num)
-    }
+        res.json({ converted: num })
+    };
 })
 
 
