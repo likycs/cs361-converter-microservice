@@ -4,6 +4,7 @@ app.use(express.json());
 
 
 app.post('/', (req, res) => {
+    console.log(req.body)
     res.send(req.body)
 })
 
