@@ -15,9 +15,11 @@ app.post('/', (req, res) => {
 
     if (req.body.convertFrom == "lbs") {
         num = (num * 0.45359237)
+        num = num.toFixed(1)
         res.json({converted: num})
     } else {
         num = (num * 2.2)
+        num = num.toFxied(1)
         res.json({converted: num})
     };
 })
