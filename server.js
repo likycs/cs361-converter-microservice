@@ -4,8 +4,21 @@ app.use(express.json());
 
 
 app.post('/', (req, res) => {
-    console.log(req.body)
-    res.send(req.body)
+    if (typeof req.body.number !== Number) {
+        res.send('Invalid input for number')
+    };
+
+    let num = req.body.number;
+
+    if (req.body.convertFrom == "lbs") {
+        num = (num * 0.45359237)
+        console.log(num)
+        res.send(num)
+    } else {
+        num = (num * 2.2)
+        console.log(num)
+        res.send(num)
+    }
 })
 
 
