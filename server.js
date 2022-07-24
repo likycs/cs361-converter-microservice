@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send('testing 123')
+})
 
 app.post('/', (req, res) => {
     if (typeof req.body.number !== Number) {
