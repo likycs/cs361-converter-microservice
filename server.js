@@ -20,6 +20,7 @@ app.post('/', (req, res) => {
         res.json({convertedTo: "kg", number: num})
     } else if (req.body.convertFrom == 'kg') {
         num = (num * 2.2)
+        num = num.toFixed(1)
         res.json({convertedTo: "lbs", number: num})
     } else {
         res.json({Error:"Conversion format not supported"})
