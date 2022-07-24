@@ -14,14 +14,14 @@ app.post('/', (req, res) => {
     let num = req.body.number;
 
 
-    if (req.body.convertFrom == 'lbs') {
+    if (req.body.convertTo == 'kg') {
         num = (num * 0.45359237)
         num = num.toFixed(1)
-        res.json({convertedTo: "kg", number: num})
-    } else if (req.body.convertFrom == 'kg') {
+        res.json({convertedFrom: "lbs", number: num})
+    } else if (req.body.convertTo == 'lbs') {
         num = (num * 2.2)
         num = num.toFixed(1)
-        res.json({convertedTo: "lbs", number: num})
+        res.json({convertedFrom: "kg", number: num})
     } else {
         res.json({Error:"Conversion format not supported"})
     };
