@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
 app.post('/', (req, res) => {
     if (typeof req.body.number !== 'number') {
         res.json({Error:'Invalid input for number'})
-    } else if (req.body.convertFrom !== 'lb' || req.body.convertFrom !== 'kg'){
+    } else if (req.body.convertFrom !== 'lbs' || req.body.convertFrom !== 'kg'){
         res.json({Error: 'Conversion format not supported'})
     };
 
