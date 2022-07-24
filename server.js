@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
 })
 
 app.post('/', (req, res) => {
-    if (typeof req.body.number !== Number) {
+    if (typeof req.body.number !== 'number') {
         res.send('Invalid input for number')
     };
 
