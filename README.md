@@ -21,3 +21,4 @@ It will look like:
 Any invalid properties/values will result in an error message.
 
 ## UML Sequence Diagram
+![Diagram](https://ibb.co/WzdjQS7)
