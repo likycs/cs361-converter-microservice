@@ -21,5 +21,5 @@ It will look like:
 Any invalid properties/values will result in an error message.
 
 ## UML Sequence Diagram
-<img src="https://ibb.co/WzdjQS7">
+<img src="https://github.com/likycs/cs361-converter-microservice/blob/main/1.png">
 
