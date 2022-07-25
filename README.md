@@ -21,4 +21,5 @@ It will look like:
 Any invalid properties/values will result in an error message.
 
 ## UML Sequence Diagram
-![](https://ibb.co/WzdjQS7)
+<img src="https://ibb.co/WzdjQS7">
+
