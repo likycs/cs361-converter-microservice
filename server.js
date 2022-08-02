@@ -17,8 +17,10 @@ app.post('/', (req, res) => {
     for (let i = 0; i < numArr.length; i++) {
         if (conversions[i] == "kg") {
             numArr[i] = numArr[i] / 2.2
+            numArr[i] = numArr[i].toFixed(1)
         } else if (conversions[i] == "lbs") {
             numArr[i] = numArr[i] * 2.2
+            numArr[i] = numArr[i].toFixed(1)
         } else {
             res.json({Error: "Incorrect unit conversion format was given"})
         }
