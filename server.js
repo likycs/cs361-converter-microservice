@@ -7,24 +7,26 @@ app.get("/", (req, res) => {
 })
 
 app.post('/', (req, res) => {
-    if (typeof req.body.number !== 'number') {
+    if (Array.isArray(req.body.number) == false) {
         res.json({Error:'Invalid input for number'})
     }; 
 
-    let num = req.body.number;
+    let numArr = req.body.number;
+    let conversions = req.body.convertFrom
+
+    for (let i = 0; i < numArr.length; i++) {
+        if (conversions[i] == "kg") {
+            numArr[i] = numArr[i] / 2.2
+        } else if (conversions[i] == "lbs") {
+            numArr[i] = numArr[i] * 2.2
+        } else {
+            res.json({Error: "Incorrect unit conversion format was given"})
+        }
+    }
+
+    res.json({number: numArr})
 
 
-    if (req.body.convertTo == 'kg') {
-        num = (num * 0.45359237)
-        num = num.toFixed(1)
-        res.json({convertedFrom: "lbs", number: num})
-    } else if (req.body.convertTo == 'lbs') {
-        num = (num * 2.2)
-        num = num.toFixed(1)
-        res.json({convertedFrom: "kg", number: num})
-    } else {
-        res.json({Error:"Conversion format not supported"})
-    };
 })
 
 
